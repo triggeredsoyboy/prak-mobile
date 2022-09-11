@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
     final email = TextFormField(
       keyboardType: TextInputType.emailAddress,
       autofocus: false,
-      initialValue: '',
+      initialValue: 'example@domain.com',
       decoration: InputDecoration(
         hintText: 'Email',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
 
     final password = TextFormField(
       autofocus: false,
-      initialValue: '',
+      initialValue: 'password123',
       obscureText: true,
       decoration: InputDecoration(
         hintText: 'Password',
@@ -61,29 +61,30 @@ class _LoginPageState extends State<LoginPage> {
 
     final forgotLabel = FlatButton(
       child: Text(
-        'Forgot Password?',
+        'Forgot password?',
         style: TextStyle(color: Colors.black54),
       ),
       onPressed: () {},
     );
 
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: ListView(
-            shrinkWrap: true,
-            padding: EdgeInsets.only(left: 24.0, right: 24.0),
-            children: <Widget>[
-              logo,
-              SizedBox(height: 48.0),
-              email,
-              SizedBox(height: 8.0),
-              password,
-              SizedBox(height: 24.0),
-              loginButton,
-              forgotLabel
-            ],
-          ),
-        ));
+      backgroundColor: Colors.white,
+      body: Center(
+        child: ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.only(left: 24.0, right: 24.0),
+          children: <Widget>[
+            logo,
+            SizedBox(height: 48.0),
+            email,
+            SizedBox(height: 8.0),
+            password,
+            SizedBox(height: 24.0),
+            loginButton,
+            forgotLabel
+          ],
+        ),
+      ),
+    );
   }
 }
