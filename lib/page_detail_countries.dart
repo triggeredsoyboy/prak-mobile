@@ -17,6 +17,7 @@ class _PageDetailCountriesState extends State<PageDetailCountries> {
         title: Text("Countries Detail"),
       ),
       body: _buildDetailCountriesBody(),
+      backgroundColor: Colors.white70,
     );
   }
 
@@ -65,28 +66,45 @@ class _PageDetailCountriesState extends State<PageDetailCountries> {
   //   );
   // }
 
-  Widget _buildItemCountries(String value) {
-    return Text(
-      value,
-      style: const TextStyle(fontSize: 16),
+  Widget _buildSuccessSection(CountriesModel data) {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              decoration: const BoxDecoration(color: Colors.white),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "${data.countries?[index].name}",
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Text(
+                    "(${data.countries?[index].iso3})",
+                    style: const TextStyle(
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 
-  Widget _buildSuccessSection(CountriesModel data) {
-    return ListView.builder(
-      itemCount: data.countries?.length,
-      itemBuilder: (context, index) {
-        return InkWell(
-          onTap: () {},
-          child: Card(
-            color: Colors.white70,
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: _buildItemCountries("${data.countries?[index].name}"),
-            ),
-          ),
-        );
-      },
-    );
+  Widget _buildItemCountries(String value) {
+    return Text(value);
   }
 }
