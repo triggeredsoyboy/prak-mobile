@@ -76,6 +76,7 @@ class _PageDetailCountriesState extends State<PageDetailCountries> {
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
           ),
+          itemCount: data.countries?.length,
           itemBuilder: (BuildContext context, int index) {
             return Container(
               decoration: const BoxDecoration(color: Colors.white),
