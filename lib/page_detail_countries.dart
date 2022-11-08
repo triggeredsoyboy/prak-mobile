@@ -86,7 +86,7 @@ class _PageDetailCountriesState extends State<PageDetailCountries> {
                     "${data.countries?[index].name}",
                     style: const TextStyle(
                       fontSize: 16,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   Text(
