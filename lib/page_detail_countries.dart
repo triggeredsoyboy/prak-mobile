@@ -17,7 +17,6 @@ class _PageDetailCountriesState extends State<PageDetailCountries> {
         title: Text("Countries Detail"),
       ),
       body: _buildDetailCountriesBody(),
-      backgroundColor: Colors.white70,
     );
   }
 
@@ -79,7 +78,7 @@ class _PageDetailCountriesState extends State<PageDetailCountries> {
           itemCount: data.countries?.length,
           itemBuilder: (BuildContext context, int index) {
             return Container(
-              decoration: const BoxDecoration(color: Colors.white),
+              decoration: const BoxDecoration(color: Colors.white70),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
